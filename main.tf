@@ -1,14 +1,14 @@
 
 provider "aws" {
-region = "ap-southeast-1"
+region = "ap-southeast-2"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-023eb5c021738c6d0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "bhanu"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "ap-southeast-2a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -23,11 +23,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-023eb5c021738c6d0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "bhanu"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "ap-southeast-2b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -42,22 +42,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-023eb5c021738c6d0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "bhanu"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "ap-southeast-2a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-023eb5c021738c6d0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "bhanu"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "ap-southeast-2b"
   tags = {
     Name = "app-server-2"
   }
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "devopsbyrahamterraserverbucket9988oo9988"
+  bucket = "bhanuterraserverbucket9988oo9988"
 }
 
 resource "aws_iam_user" "seven" {
@@ -103,7 +103,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-southeast-1a"
+ availability_zone = "ap-southeast-2a"
   size = 40
   tags = {
     Name = "ebs-001"
